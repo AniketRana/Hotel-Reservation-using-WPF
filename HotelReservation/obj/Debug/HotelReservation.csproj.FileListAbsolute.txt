@@ -15,3 +15,5 @@ E:\CS\repos\HotelReservation\HotelReservation\obj\Debug\HotelReservation.csproj.
 E:\CS\repos\HotelReservation\HotelReservation\obj\Debug\HotelReservation.csproj.CoreCompileInputs.cache
 E:\CS\repos\HotelReservation\HotelReservation\obj\Debug\HotelReservation.exe
 E:\CS\repos\HotelReservation\HotelReservation\obj\Debug\HotelReservation.pdb
+E:\CS\repos\HotelReservation\HotelReservation\obj\Debug\Register.g.cs
+E:\CS\repos\HotelReservation\HotelReservation\obj\Debug\Register.baml
