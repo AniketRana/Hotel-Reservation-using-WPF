@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:HotelReservation"
         mc:Ignorable="d"
         Title="Login" Height="450" Width="800">
-    <Grid>
+    <Grid Background="AliceBlue">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="20" />
             <ColumnDefinition Width="*" />
@@ -21,15 +21,15 @@
             <RowDefinition Height="*" />
             <RowDefinition Height="20" />
         </Grid.RowDefinitions>
-        
+
         <StackPanel Grid.Column="1" Grid.Row="0" HorizontalAlignment="Left" Name="StackPanel1" VerticalAlignment="Top">
-            
+
         </StackPanel>
         <StackPanel Grid.Column="2" Grid.Row="1" HorizontalAlignment="Stretch" Name="StackPanel2" Orientation="Vertical" VerticalAlignment="Stretch">
             <TextBlock FontSize="25" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="44,0,44,15">Hotel Reservation Management</TextBlock>
         </StackPanel>
         <StackPanel Grid.Column="3" Grid.Row="0" HorizontalAlignment="Left" Name="StackPanel3" VerticalAlignment="Top">
-            
+
         </StackPanel>
         <StackPanel Grid.Column="2" Grid.Row="2" HorizontalAlignment="Center" Name="StackPanel4" Orientation="Vertical" VerticalAlignment="Center">
 
@@ -38,9 +38,17 @@
             <TextBox x:Name="txt_email" Height="23" Text="" Width="242" HorizontalAlignment="Left"/>
             <Label Content="Password"/>
             <PasswordBox x:Name="txt_password" Height="23" Width="242"/>
-            <Button Content="Login" Width="75" HorizontalAlignment="Right" Margin="0,25,0,0"/>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Button Content="Login" Width="75" HorizontalAlignment="Right" Margin="0,10,0,0" Height="21" Grid.Column="1" />
+            </Grid>
+            
 
 
         </StackPanel>
+
     </Grid>
 </Window>
