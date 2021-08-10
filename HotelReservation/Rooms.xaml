@@ -72,7 +72,7 @@
         </StackPanel>
 
         <StackPanel Grid.Row="3" Grid.Column="1" HorizontalAlignment="Stretch" Name="StackPanel5" VerticalAlignment="Stretch" Grid.ColumnSpan="4">
-            <DataGrid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="13" />
+            <DataGrid x:Name="dg_rooms" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
         </StackPanel>
     </Grid>
 </Window>
