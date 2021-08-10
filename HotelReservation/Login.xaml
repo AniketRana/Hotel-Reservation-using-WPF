@@ -43,7 +43,7 @@
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
-                <Button Content="Login" Width="75" HorizontalAlignment="Right" Margin="0,10,0,0" Height="21" Grid.Column="1" />
+                <Button Content="Login" Width="75" HorizontalAlignment="Right" Margin="0,10,0,0" Height="21" Grid.Column="1" Click="Button_Click" />
             </Grid>
             
 
