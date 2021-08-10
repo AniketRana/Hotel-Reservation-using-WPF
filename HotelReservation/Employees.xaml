@@ -18,7 +18,7 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="20" />
             <RowDefinition Height="*" />
-            <RowDefinition Height="*" />
+            <RowDefinition Height="auto" />
             <RowDefinition Height="*" />
             <RowDefinition Height="20" />
         </Grid.RowDefinitions>
@@ -71,8 +71,6 @@
             </Grid>
         </StackPanel>
 
-        <StackPanel Grid.Row="3" Grid.Column="1" HorizontalAlignment="Stretch" Name="StackPanel5" VerticalAlignment="Stretch" Grid.ColumnSpan="4">
-            <DataGrid x:Name="dg_employees" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="13" />
-        </StackPanel>
+        <DataGrid x:Name="dg_employees" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="4" />
     </Grid>
 </Window>
