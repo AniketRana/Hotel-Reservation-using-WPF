@@ -24,5 +24,10 @@ namespace HotelReservation
         {
             InitializeComponent();
         }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            frame.NavigationService.Navigate(new LoginPage());
+        }
     }
 }

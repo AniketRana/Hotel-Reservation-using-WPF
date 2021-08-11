@@ -93,3 +93,14 @@ E:\GroupProj\HotelReservation\hotel_reservation\HotelReservation\obj\Debug\Hotel
 E:\GroupProj\HotelReservation\hotel_reservation\HotelReservation\obj\Debug\HotelReservation.csproj.CoreCompileInputs.cache
 E:\GroupProj\HotelReservation\hotel_reservation\HotelReservation\obj\Debug\HotelReservation.exe
 E:\GroupProj\HotelReservation\hotel_reservation\HotelReservation\obj\Debug\HotelReservation.pdb
+E:\CS\repos\hotel_reservation\HotelReservation\obj\Debug\HotelReservation.csproj.AssemblyReference.cache
+E:\CS\repos\hotel_reservation\HotelReservation\obj\Debug\LoginPage.g.cs
+E:\CS\repos\hotel_reservation\HotelReservation\obj\Debug\LoginPage.baml
+E:\CS\repos\hotel_reservation\HotelReservation\obj\Debug\ReservationPage.g.cs
+E:\CS\repos\hotel_reservation\HotelReservation\obj\Debug\ReservationPage.baml
+E:\CS\repos\hotel_reservation\HotelReservation\obj\Debug\EmployeesPage.g.cs
+E:\CS\repos\hotel_reservation\HotelReservation\obj\Debug\EmployeesPage.baml
+E:\CS\repos\hotel_reservation\HotelReservation\obj\Debug\RoomPage.g.cs
+E:\CS\repos\hotel_reservation\HotelReservation\obj\Debug\RoomPage.baml
+E:\CS\repos\hotel_reservation\HotelReservation\obj\Debug\CustomersPage.g.cs
+E:\CS\repos\hotel_reservation\HotelReservation\obj\Debug\CustomersPage.baml
