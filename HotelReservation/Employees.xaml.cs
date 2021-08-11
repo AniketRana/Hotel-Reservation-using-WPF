@@ -36,8 +36,6 @@ namespace HotelReservation
         DataTable dt = new DataTable();
         DataSet ds = new DataSet();
         string sql = "";
-
-
         public void FillData()
         {
             try
@@ -64,11 +62,7 @@ namespace HotelReservation
                         list.Add(dr);
                     }
 
-                    //foreach (DataRow item in list)
-                    //{
-                    //    dg_employees.ItemsSource(item.ItemArray.ToString());
-                    //}
-                    dg_employees.ItemsSource = dt.AsEnumerable();
+                    dg_employees.ItemsSource = dt.DefaultView;
                     
                 }
                 con.Close();

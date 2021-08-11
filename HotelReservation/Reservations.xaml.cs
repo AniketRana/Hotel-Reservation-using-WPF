@@ -23,5 +23,30 @@ namespace HotelReservation
         {
             InitializeComponent();
         }
+
+        private void btn_employees_Click(object sender, RoutedEventArgs e)
+        {
+            Employees emp = new Employees();
+            emp.Show();
+        }
+
+        private void btn_reservation_Click(object sender, RoutedEventArgs e)
+        {
+            Reservations reserv = new Reservations();
+            reserv.Show();
+
+        }
+
+        private void btn_customers_Click(object sender, RoutedEventArgs e)
+        {
+            Customers cust = new Customers();
+            cust.Show();
+        }
+
+        private void btn_room_Click(object sender, RoutedEventArgs e)
+        {
+            Rooms rm = new Rooms();
+            rm.Show();
+        }
     }
 }

@@ -54,7 +54,9 @@ namespace HotelReservation
                 else
                 {
                     //redirect to home page
-                    MessageBox.Show("Login Done");
+                    //MessageBox.Show("Login Done");
+                    Reservations reserv = new Reservations();
+                    reserv.Show();
                 }
                 con.Close();
 
