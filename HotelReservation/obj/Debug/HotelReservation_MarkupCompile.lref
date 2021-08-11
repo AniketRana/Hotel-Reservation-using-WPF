@@ -1,15 +1,10 @@
 ﻿
 
-FE:\CS\repos\hotel_reservation\HotelReservation\Customers.xaml;;
-FE:\CS\repos\hotel_reservation\HotelReservation\Employees.xaml;;
-FE:\CS\repos\hotel_reservation\HotelReservation\Login.xaml;;
-FE:\CS\repos\hotel_reservation\HotelReservation\MainWindow.xaml;;
-FE:\CS\repos\hotel_reservation\HotelReservation\Register.xaml;;
-FE:\CS\repos\hotel_reservation\HotelReservation\Reservations.xaml;;
-FE:\CS\repos\hotel_reservation\HotelReservation\Rooms.xaml;;
-FE:\CS\repos\hotel_reservation\HotelReservation\LoginPage.xaml;;
-FE:\CS\repos\hotel_reservation\HotelReservation\ReservationPage.xaml;;
-FE:\CS\repos\hotel_reservation\HotelReservation\EmployeesPage.xaml;;
-FE:\CS\repos\hotel_reservation\HotelReservation\RoomPage.xaml;;
+FE:\CS\repos\hotel_reservation\HotelReservation\AddReservation.xaml;;
 FE:\CS\repos\hotel_reservation\HotelReservation\CustomersPage.xaml;;
+FE:\CS\repos\hotel_reservation\HotelReservation\EmployeesPage.xaml;;
+FE:\CS\repos\hotel_reservation\HotelReservation\LoginPage.xaml;;
+FE:\CS\repos\hotel_reservation\HotelReservation\MainWindow.xaml;;
+FE:\CS\repos\hotel_reservation\HotelReservation\ReservationPage.xaml;;
+FE:\CS\repos\hotel_reservation\HotelReservation\RoomPage.xaml;;
 

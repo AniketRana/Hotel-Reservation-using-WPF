@@ -60,14 +60,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Customers.xaml.cs">
-      <DependentUpon>Customers.xaml</DependentUpon>
+    <Compile Include="AddReservation.xaml.cs">
+      <DependentUpon>AddReservation.xaml</DependentUpon>
     </Compile>
     <Compile Include="CustomersPage.xaml.cs">
       <DependentUpon>CustomersPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Employees.xaml.cs">
-      <DependentUpon>Employees.xaml</DependentUpon>
     </Compile>
     <Compile Include="EmployeesPage.xaml.cs">
       <DependentUpon>EmployeesPage.xaml</DependentUpon>
@@ -75,22 +72,13 @@
     <Compile Include="LoginPage.xaml.cs">
       <DependentUpon>LoginPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Register.xaml.cs">
-      <DependentUpon>Register.xaml</DependentUpon>
-    </Compile>
     <Compile Include="ReservationPage.xaml.cs">
       <DependentUpon>ReservationPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Reservations.xaml.cs">
-      <DependentUpon>Reservations.xaml</DependentUpon>
     </Compile>
     <Compile Include="RoomPage.xaml.cs">
       <DependentUpon>RoomPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Rooms.xaml.cs">
-      <DependentUpon>Rooms.xaml</DependentUpon>
-    </Compile>
-    <Page Include="Customers.xaml">
+    <Page Include="AddReservation.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -98,15 +86,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Employees.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="EmployeesPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Login.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -122,30 +102,15 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Login.xaml.cs">
-      <DependentUpon>Login.xaml</DependentUpon>
-    </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Register.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="ReservationPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Reservations.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="RoomPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Rooms.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -187,6 +152,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="customers.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="add.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -46,7 +46,7 @@ namespace HotelReservation
                     con.Close();
                 }
                 con.Open();
-                sql = "Select * from Room";
+                sql = "select RoomType, RoomNumber, Price, CASE When IsOccupied=0 THEN 'Vacant' ELSE 'Occupied' END as Occupancy from RoomType as rt inner join Room as r on rt.RId=r.RId";
                 adp = new SqlDataAdapter(sql, con);
                 adp.Fill(dt);
                 if (dt.Rows.Count == 0)

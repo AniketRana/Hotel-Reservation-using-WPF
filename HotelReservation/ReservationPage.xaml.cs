@@ -46,5 +46,20 @@ namespace HotelReservation
         {
             this.NavigationService.Navigate(new RoomPage());
         }
+
+        private void btn_add_Click(object sender, RoutedEventArgs e)
+        {
+            this.NavigationService.Navigate(new AddReservation());
+        }
+
+        public void Grid_MouseUp(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btn_add_MouseUp(object sender, MouseButtonEventArgs e)
+        {
+
+        }
     }
 }

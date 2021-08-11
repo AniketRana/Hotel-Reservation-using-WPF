@@ -44,7 +44,7 @@ namespace HotelReservation
                     con.Close();
                 }
                 con.Open();
-                sql = "Select * from Employee";
+                sql = "Select FirstName, LastName, MobileNo, Email, UserName from Employee as e inner join [User] as u on e.UserId=u.UId";
                 adp = new SqlDataAdapter(sql, con);
                 adp.Fill(dt);
                 if (dt.Rows.Count == 0)
