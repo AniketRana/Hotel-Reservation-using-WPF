@@ -57,7 +57,7 @@ namespace HotelReservation
                     //MessageBox.Show("Login Done");
                     //Reservations reserv = new Reservations();
                     //reserv.Show();
-                    this.NavigationService.Navigate(new ReservationPage());
+                    this.NavigationService.Navigate(new AddReservation());
                 }
                 con.Close();
 

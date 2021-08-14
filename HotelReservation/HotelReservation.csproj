@@ -60,6 +60,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="AddCustomer.xaml.cs">
+      <DependentUpon>AddCustomer.xaml</DependentUpon>
+    </Compile>
     <Compile Include="AddReservation.xaml.cs">
       <DependentUpon>AddReservation.xaml</DependentUpon>
     </Compile>
@@ -72,12 +75,20 @@
     <Compile Include="LoginPage.xaml.cs">
       <DependentUpon>LoginPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Models\Customer.cs" />
+    <Compile Include="Models\Reservation.cs" />
+    <Compile Include="Models\Room.cs" />
     <Compile Include="ReservationPage.xaml.cs">
       <DependentUpon>ReservationPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="RoomPage.xaml.cs">
       <DependentUpon>RoomPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Models\User.cs" />
+    <Page Include="AddCustomer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="AddReservation.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -155,6 +166,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="reservation.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

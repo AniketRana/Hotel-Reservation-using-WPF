@@ -39,7 +39,7 @@ namespace HotelReservation
 
         private void btn_customers_Click(object sender, RoutedEventArgs e)
         {
-            this.NavigationService.Navigate(new CustomersPage());
+            this.NavigationService.Navigate(new AddCustomer());
         }
 
         private void btn_room_Click(object sender, RoutedEventArgs e)

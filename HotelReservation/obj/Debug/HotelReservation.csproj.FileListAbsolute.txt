@@ -93,3 +93,6 @@ E:\CS\repos\hotel_reservation\HotelReservation\obj\Debug\CustomersPage.g.cs
 E:\CS\repos\hotel_reservation\HotelReservation\obj\Debug\CustomersPage.baml
 E:\CS\repos\hotel_reservation\HotelReservation\obj\Debug\AddReservation.g.cs
 E:\CS\repos\hotel_reservation\HotelReservation\obj\Debug\AddReservation.baml
+E:\CS\repos\hotel_reservation\HotelReservation\obj\Debug\AddCustomer.g.cs
+E:\CS\repos\hotel_reservation\HotelReservation\obj\Debug\AddCustomer.baml
+E:\CS\repos\hotel_reservation\HotelReservation\obj\Debug\HotelReservation.csproj.AssemblyReference.cache

@@ -19,61 +19,86 @@
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="20" />
-            <RowDefinition Height="*" />
+            <RowDefinition Height="auto" />
             <RowDefinition Height="auto" />
             <RowDefinition Height="*" />
             <RowDefinition Height="20" />
         </Grid.RowDefinitions>
-
-        <StackPanel Grid.Column="1" Grid.Row="1" HorizontalAlignment="Center" Name="StackPanel1" VerticalAlignment="Top" Margin="0,10,0,10">
+        <Label Content="Manage Reservation" FontSize="30" Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="2" />
+        <StackPanel Grid.Column="1" Grid.Row="1" HorizontalAlignment="Center" Name="StackPanel1" VerticalAlignment="Top"  Margin="10,10,10,0">
             <Grid Background="#FFB4E4CA">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="*" />
-                </Grid.ColumnDefinitions>
-
-                <Image Grid.Column="0" HorizontalAlignment="Left" Height="60" VerticalAlignment="Top" Width="75" Source="rooms.png" Margin="5,0,0,0" />
-                <Button x:Name="btn_room" Height="20" Click="btn_room_Click" Content="Rooms" Width="75" Background="#FFB4E4CA" Foreground="Black" Grid.Column="1" BorderThickness="0" />
+                <Button x:Name="btn_room" Click="btn_room_Click" Background="#FFB4E4CA" Foreground="Black" Height="60" BorderThickness="0" HorizontalAlignment="Stretch">
+                    <StackPanel Orientation="Horizontal">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                <ColumnDefinition Width="20"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Image Source="rooms.png" HorizontalAlignment="Left" Grid.Column="0" Margin="25,10,10,10" />
+                            <TextBlock Text="Customers" VerticalAlignment="Center" Grid.Column="2" Margin="10,10,25,10" />
+                        </Grid>
+                    </StackPanel>
+                </Button>
             </Grid>
         </StackPanel>
 
-        <StackPanel Grid.Column="2" Grid.Row="1" HorizontalAlignment="Center" Name="StackPanel2" VerticalAlignment="Top" Margin="0,10,0,10">
+        <StackPanel Grid.Column="2" Grid.Row="1" HorizontalAlignment="Center" Name="StackPanel2" VerticalAlignment="Top"  Margin="10,10,10,0">
             <Grid Background="#FFB4E4CA">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="*" />
-                </Grid.ColumnDefinitions>
-
-                <Image Grid.Column="0" HorizontalAlignment="Left" Height="60" VerticalAlignment="Top" Width="75" Source="customers.png" Margin="5,0,0,0"/>
-                <Button x:Name="btn_customers" Click="btn_customers_Click" Content="Customers" Width="75" Background="#FFB4E4CA" Foreground="Black" Grid.Column="1" Height="20" BorderThickness="0" />
+                <Button x:Name="btn_customers" Click="btn_customers_Click" Background="#FFB4E4CA" Foreground="Black" Height="60" BorderThickness="0" HorizontalAlignment="Stretch">
+                    <StackPanel Orientation="Horizontal">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                <ColumnDefinition Width="20"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Image Source="customers.png" HorizontalAlignment="Left" Grid.Column="0" Margin="25,10,10,10" />
+                            <TextBlock Text="Customers" VerticalAlignment="Center" Grid.Column="2" Margin="10,10,25,10" />
+                        </Grid>
+                    </StackPanel>
+                </Button>
             </Grid>
         </StackPanel>
 
-        <StackPanel Grid.Column="3" Grid.Row="1" HorizontalAlignment="Center" Name="StackPanel3" VerticalAlignment="Top"  Margin="0,10,0,10">
-            <Grid Background="#FFB4E4CA">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="*" />
-                </Grid.ColumnDefinitions>
-
-                <Image Grid.Column="0" HorizontalAlignment="Left" Height="60" VerticalAlignment="Top" Width="75" Source="customers.png" Margin="5,0,0,0"/>
-                <Button x:Name="btn_reservation" Click="btn_reservation_Click" Content="Reservation" Width="75" Background="#FFB4E4CA" Foreground="Black" Grid.Column="1" Height="20" BorderThickness="0" />
+        <StackPanel Grid.Column="3" Grid.Row="1" HorizontalAlignment="Center" Name="StackPanel3" VerticalAlignment="Top"  Margin="10,10,10,0">
+            <Grid Background="#FF93C0C7">
+                <Button x:Name="btn_reservation" Click="btn_reservation_Click" Background="#FF93C0C7" Foreground="Black" Height="60" BorderThickness="0" HorizontalAlignment="Stretch">
+                    <StackPanel Orientation="Horizontal">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                <ColumnDefinition Width="20"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Image Source="customers.png" HorizontalAlignment="Left" Grid.Column="0" Margin="25,10,10,10" />
+                            <TextBlock Text="Reservations" VerticalAlignment="Center" Grid.Column="2" Margin="10,10,25,10" />
+                        </Grid>
+                    </StackPanel>
+                </Button>
             </Grid>
         </StackPanel>
 
-        <StackPanel Grid.Column="4" Grid.Row="1" HorizontalAlignment="Center" Name="StackPanel4" VerticalAlignment="Top"  Margin="0,10,0,10">
-            <Grid Background="#FFB4E4CA">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="*" />
-                </Grid.ColumnDefinitions>
 
-                <Image Grid.Column="0" HorizontalAlignment="Left" Height="60" VerticalAlignment="Top" Width="75" Source="employees.png" Margin="5,0,0,0"/>
-                <Button x:Name="btn_employees" Content="Employees" Width="75" Background="#FFB4E4CA" Foreground="Black" Grid.Column="1" Height="20" BorderThickness="0" Click="btn_employees_Click" />
+        <StackPanel Grid.Column="4" Grid.Row="1" HorizontalAlignment="Center" Name="StackPanel4" VerticalAlignment="Top"  Margin="10,10,10,0">
+            <Grid Background="#FFB4E4CA">
+                <Button x:Name="btn_employees" Click="btn_employees_Click" Background="#FFB4E4CA" Foreground="Black" Height="60" BorderThickness="0" HorizontalAlignment="Stretch">
+                    <StackPanel Orientation="Horizontal">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                <ColumnDefinition Width="20"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Image Source="employees.png" HorizontalAlignment="Left" Grid.Column="0" Margin="25,10,10,10" />
+                            <TextBlock Text="Customers" VerticalAlignment="Center" Grid.Column="2" Margin="10,10,25,10" />
+                        </Grid>
+                    </StackPanel>
+                </Button>
             </Grid>
         </StackPanel>
 
-        <DataGrid x:Name="dg_reservations" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="4" />
+        <DataGrid x:Name="dg_reservations" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="4" MaxHeight="400" />
         <Grid Background="#FF00ADC1" Grid.Row="2" Grid.Column="4" Width="100" Margin="0,0,0,10" MouseUp="Grid_MouseUp">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />

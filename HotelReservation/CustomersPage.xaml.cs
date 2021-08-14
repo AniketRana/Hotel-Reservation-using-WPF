@@ -95,5 +95,10 @@ namespace HotelReservation
         {
             this.NavigationService.Navigate(new RoomPage());
         }
+
+        private void btn_add_Click(object sender, RoutedEventArgs e)
+        {
+            this.NavigationService.Navigate(new AddCustomer());
+        }
     }
 }

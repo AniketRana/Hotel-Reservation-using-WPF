@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HotelReservation"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800" Loaded="Window_Loaded">
+        Title="Hotel Management System" Height="450" Width="800" Loaded="Window_Loaded" WindowState="Maximized">
     <Grid>
         
         <Frame x:Name="frame" Content="Frame" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" NavigationUIVisibility="Hidden" Grid.ColumnSpan="2" />
