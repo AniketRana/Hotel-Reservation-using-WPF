@@ -94,6 +94,8 @@ namespace HotelReservation
                 }
                 con.Open();
                 sql = "select RoomType as 'Room Type', RoomNumber as 'Room Number', Price, CASE When IsOccupied=0 THEN 'Vacant' ELSE 'Occupied' END as Occupancy from RoomType as rt inner join Room as r on rt.RId=r.RId";
+                
+
                 adp = new SqlDataAdapter(sql, con);
                 adp.Fill(dt);
                 if (dt.Rows.Count == 0)
@@ -119,7 +121,13 @@ namespace HotelReservation
                 }
                 con.Open();
                 adp = new SqlDataAdapter();
-                sql = "select CheckInDate as 'Check In Date', CheckOutDate as 'Check Out Date', TotalPrice as 'Total Price', FirstName as 'First Name', LastName as 'Last Name', RoomNumber as 'Room Number' from Reservation as rs left join Room as r on rs.RoomId=r.RId left join Customer c on rs.CId = c.Cid left join [User] as u on c.UserId = u.UId";
+                //sql = "select CheckInDate as 'Check In Date', CheckOutDate as 'Check Out Date', TotalPrice as 'Total Price', FirstName as 'First Name', LastName as 'Last Name', RoomNumber as 'Room Number' from Reservation as rs left join Room as r on rs.RoomId=r.RId left join Customer c on rs.CId = c.Cid left join [User] as u on c.UserId = u.UId";
+                sql = "select CheckInDate as 'Check In Date', CheckOutDate as 'Check Out Date', TotalPrice as 'Total Price', ";
+                sql += " FirstName as 'First Name', LastName as 'Last Name', RoomNumber as 'Room Number' from Reservation as rs";
+                sql += " left join Room as r on rs.RoomId = r.RId";
+                sql += " left join Customer c on rs.CId = c.Cid";
+                sql += " left join[User] as u on c.UserId = u.UId";
+                sql += " where GETDATE() >= CheckInDate and GETDATE() <= CheckOutDate";
                 adp = new SqlDataAdapter(sql, con);
                 dt = new DataTable();
                 adp.Fill(dt);
@@ -183,20 +191,40 @@ namespace HotelReservation
         {
             if (validate())
             {
-                var customer_name = cmb_customer.SelectedItem;
-                var check_in_date = DateTime.ParseExact(txt_check_in.Text, "dd-MM-yyyy", CultureInfo.InvariantCulture);
-                var check_out_date = DateTime.ParseExact(txt_check_out.Text, "dd-MM-yyyy", CultureInfo.InvariantCulture);
-                var room_number = txt_rooms.Text;
+                DateTime CheckIn;
+                DateTime CheckOut;
+                DateTime Todate;
 
-                int customer_id = Customer.get_customer_id_from_name(customer_name.ToString());
+                //Date validation for not select previous date and check out date must be greater than checkin date
+                CheckIn = Convert.ToDateTime(txt_check_in.Text);
+                CheckOut = Convert.ToDateTime(txt_check_out.Text);
+                Todate = System.DateTime.Now;
+                if (CheckIn < Todate)
+                {
+                    MessageBox.Show("Past date selection not possible, kindly select valid Check-in date");
+                }
+                else if (CheckIn > CheckOut)
+                {
+                    MessageBox.Show("Check out date must be greater than check-in date");
+                }
+                else
+                {
+                    var customer_name = cmb_customer.SelectedItem;
+                    var check_in_date = DateTime.ParseExact(txt_check_in.Text, "dd-MM-yyyy", CultureInfo.InvariantCulture);
+                    var check_out_date = DateTime.ParseExact(txt_check_out.Text, "dd-MM-yyyy", CultureInfo.InvariantCulture);
+                    var room_number = txt_rooms.Text;
 
-                List<DataTable> listData = new List<DataTable>();
+                    int customer_id = Customer.get_customer_id_from_name(customer_name.ToString());
 
-                listData = Reservation.ReserveBooking(customer_id, room_number, check_in_date, check_out_date);
-                dg_reservations.ItemsSource = listData[0].DefaultView;
-                dg_room.ItemsSource = listData[1].DefaultView;
+                    List<DataTable> listData = new List<DataTable>();
 
-                clearFields();
+                    listData = Reservation.ReserveBooking(customer_id, room_number, check_in_date, check_out_date);
+                    dg_reservations.ItemsSource = listData[0].DefaultView;
+                    dg_room.ItemsSource = listData[1].DefaultView;
+
+                    clearFields();
+                }
+
             }
             else
             {
@@ -206,7 +234,7 @@ namespace HotelReservation
 
         public bool validate()
         {
-            if(txt_check_in.Text == "" || txt_check_out.Text == "" || txt_rooms.Text == "")
+            if (txt_check_in.Text == "" || txt_check_out.Text == "" || txt_rooms.Text == "")
             {
                 return false;
             }
@@ -222,6 +250,60 @@ namespace HotelReservation
             txt_check_in.Text = "";
             txt_check_out.Text = "";
             txt_rooms.Text = "";
+        }
+
+        private void btn_filter_Click(object sender, RoutedEventArgs e)
+        {
+            this.dg_reservations.ItemsSource = null;
+           
+
+            if (con.State == ConnectionState.Open)
+            {
+                con.Close();
+            }
+            con.Open();
+            //sql = "select RoomType as 'Room Type', RoomNumber as 'Room Number', Price, CASE When IsOccupied=0 THEN 'Vacant' ELSE 'Occupied' END as Occupancy from RoomType as rt inner join Room as r on rt.RId=r.RId";
+            sql = "";
+            if (cmb_filter.SelectedIndex == 0)
+            {
+                sql = "select CheckInDate as 'Check In Date', CheckOutDate as 'Check Out Date', TotalPrice as 'Total Price', ";
+                sql += " FirstName as 'First Name', LastName as 'Last Name', RoomNumber as 'Room Number' from Reservation as rs";
+                sql += " left join Room as r on rs.RoomId = r.RId";
+                sql += " left join Customer c on rs.CId = c.Cid";
+                sql += " left join[User] as u on c.UserId = u.UId";
+                sql += " where GETDATE() >= CheckInDate and GETDATE() <= CheckOutDate";
+            }
+            else if (cmb_filter.SelectedIndex == 1)
+            {
+                sql = "select CheckInDate as 'Check In Date', CheckOutDate as 'Check Out Date', TotalPrice as 'Total Price', ";
+                sql += " FirstName as 'First Name', LastName as 'Last Name', RoomNumber as 'Room Number' from Reservation as rs";
+                sql += " left join Room as r on rs.RoomId = r.RId";
+                sql += " left join Customer c on rs.CId = c.Cid";
+                sql += " left join[User] as u on c.UserId = u.UId";
+                sql += " where GETDATE() > CheckOutDate";
+            }
+            else
+            {
+                sql = "select CheckInDate as 'Check In Date', CheckOutDate as 'Check Out Date', TotalPrice as 'Total Price', ";
+                sql += " FirstName as 'First Name', LastName as 'Last Name', RoomNumber as 'Room Number' from Reservation as rs";
+                sql += " left join Room as r on rs.RoomId = r.RId";
+                sql += " left join Customer c on rs.CId = c.Cid";
+                sql += " left join[User] as u on c.UserId = u.UId";
+                sql += " where GETDATE() < CheckInDate";
+            }
+
+            adp = new SqlDataAdapter(sql, con);
+            dt = new DataTable();
+            adp.Fill(dt);
+            if (dt.Rows.Count == 0)
+            {
+                MessageBox.Show("Data not available...");
+            }
+            else
+            {
+                dg_reservations.ItemsSource = dt.DefaultView;
+            }
+
         }
     }
 }

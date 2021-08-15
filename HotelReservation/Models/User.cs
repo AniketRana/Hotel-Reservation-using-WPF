@@ -55,6 +55,48 @@ namespace HotelReservation.Models
             get { return this.email; }
             set { this.email = value; }
         }
+        public void SaveEmployee(string first_name, string last_name, string mobile_number, string email, string Username, string Password)
+        {
+            sql = "INSERT INTO [User] (FirstName, LastName, MobileNo, Email) values ('" + first_name + "','" + last_name + "','" + mobile_number + "','" + email + "') select scope_identity() as Id";
+            //cmd = new SqlCommand(sql, con);
+
+            try
+            {
+                if (con.State == ConnectionState.Open)
+                {
+                    con.Close();
+                }
+                con.Open();
+                adp = new SqlDataAdapter(sql, con);
+                adp.Fill(dt);
+                int result = Convert.ToInt32(dt.Rows[0]["Id"].ToString());
+                con.Close();
+                if (result > 0)
+                {
+                    sql = "INSERT INTO Employee(UserId ,Username, Password) values(" + result + ", '" + Username + "', '" + Password+ "') select scope_identity() as Id";
+                    cmd = new SqlCommand(sql, con);
+
+                    if (con.State == ConnectionState.Open)
+                    {
+                        con.Close();
+                    }
+                    con.Open();
+                    adp = new SqlDataAdapter(sql, con);
+                    adp.Fill(dt);
+                    result = Convert.ToInt32(dt.Rows[0]["Id"].ToString());
+                    con.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Something went wrong...");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error:" + ex.ToString());
+            }
+        }
+
 
         public void Save(string first_name, string last_name, string mobile_number, string email, string city, string document_name, string document_number)
         {
