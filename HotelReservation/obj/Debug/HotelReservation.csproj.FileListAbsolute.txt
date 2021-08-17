@@ -68,7 +68,6 @@ E:\CS\repos\hotel_reservation\HotelReservation\obj\Debug\AddReservation.g.cs
 E:\CS\repos\hotel_reservation\HotelReservation\obj\Debug\AddReservation.baml
 E:\CS\repos\hotel_reservation\HotelReservation\obj\Debug\AddCustomer.g.cs
 E:\CS\repos\hotel_reservation\HotelReservation\obj\Debug\AddCustomer.baml
-E:\CS\repos\hotel_reservation\HotelReservation\obj\Debug\HotelReservation.csproj.AssemblyReference.cache
 E:\GroupProj\HotelReservation\hotel_reservation\HotelReservation\bin\Debug\HotelReservation.exe.config
 E:\GroupProj\HotelReservation\hotel_reservation\HotelReservation\bin\Debug\HotelReservation.exe
 E:\GroupProj\HotelReservation\hotel_reservation\HotelReservation\bin\Debug\HotelReservation.pdb
@@ -99,3 +98,8 @@ E:\GroupProj\HotelReservation\hotel_reservation\HotelReservation\obj\Debug\Hotel
 E:\GroupProj\HotelReservation\hotel_reservation\HotelReservation\obj\Debug\HotelReservation.csproj.CoreCompileInputs.cache
 E:\GroupProj\HotelReservation\hotel_reservation\HotelReservation\obj\Debug\HotelReservation.exe
 E:\GroupProj\HotelReservation\hotel_reservation\HotelReservation\obj\Debug\HotelReservation.pdb
+E:\CS\repos\hotel_reservation\HotelReservation\obj\Debug\AddEmployee.g.cs
+E:\CS\repos\hotel_reservation\HotelReservation\obj\Debug\AddEmployee.baml
+E:\CS\repos\hotel_reservation\HotelReservation\obj\Debug\HotelReservation.csproj.AssemblyReference.cache
+E:\CS\repos\hotel_reservation\HotelReservation\obj\Debug\AddRoom.g.cs
+E:\CS\repos\hotel_reservation\HotelReservation\obj\Debug\AddRoom.baml

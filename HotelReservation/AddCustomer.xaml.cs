@@ -76,7 +76,7 @@ namespace HotelReservation
         }
         private void btn_employees_Click(object sender, RoutedEventArgs e)
         {
-            this.NavigationService.Navigate(new EmployeesPage());
+            this.NavigationService.Navigate(new AddEmployee());
         }
 
         private void btn_reservation_Click(object sender, RoutedEventArgs e)
@@ -91,7 +91,7 @@ namespace HotelReservation
 
         private void btn_room_Click(object sender, RoutedEventArgs e)
         {
-            this.NavigationService.Navigate(new RoomPage());
+            this.NavigationService.Navigate(new AddRoom());
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

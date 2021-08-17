@@ -1,5 +1,9 @@
-﻿using System;
+﻿using HotelReservation.Models;
+using System;
 using System.Collections.Generic;
+using System.Configuration;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,20 +16,15 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using System.Data;
-using System.Data.SqlClient;
-using System.Configuration;
-using System.Collections.Specialized;
-using HotelReservation.Models;
 
 namespace HotelReservation
 {
     /// <summary>
-    /// Interaction logic for AddCustomer.xaml
+    /// Interaction logic for AddRoom.xaml
     /// </summary>
-    public partial class AddEmployee : Page
+    public partial class AddRoom : Page
     {
-        public AddEmployee()
+        public AddRoom()
         {
             InitializeComponent();
             FillData();
@@ -37,6 +36,7 @@ namespace HotelReservation
         DataTable dt = new DataTable();
         DataSet ds = new DataSet();
         string sql = "";
+        
 
         public void FillData()
         {
@@ -48,9 +48,10 @@ namespace HotelReservation
                     con.Close();
                 }
                 con.Open();
-                sql = "select FirstName, LastName, MobileNo, Email,Username, Password from Employee as e left join [User] as u on e.UserId=u.UId;";
+                sql = "select RoomType from RoomType;";
                 adp = new SqlDataAdapter(sql, con);
                 adp.Fill(dt);
+                con.Close();
                 if (dt.Rows.Count == 0)
                 {
                     /// MessageBox.Show("Data not available...");
@@ -63,7 +64,25 @@ namespace HotelReservation
                     //    list.Add(dr);
                     //}
 
-                    dg_Employee.ItemsSource = dt.DefaultView;
+                    dg_room_type.ItemsSource = dt.DefaultView;
+
+                    for (int i = 0; i < dt.Rows.Count; i++)
+                    {
+                        string theValue = dt.Rows[i]["RoomType"].ToString();
+                        cmb_room_type.Items.Add(theValue);
+                    }
+
+                    dt = new DataTable();
+                    if (con.State == ConnectionState.Open)
+                    {
+                        con.Close();
+                    }
+                    con.Open();
+                    sql = "select RoomType as 'Room Type', RoomNumber as 'Room Number', Price from Room as r left join RoomType rt on r.RId = rt.RId;";
+                    adp = new SqlDataAdapter(sql, con);
+                    adp.Fill(dt);
+                    con.Close();
+                    dg_room.ItemsSource = dt.DefaultView;
 
                 }
                 con.Close();
@@ -74,6 +93,7 @@ namespace HotelReservation
                 MessageBox.Show("Error:" + ex.ToString());
             }
         }
+
         private void btn_employees_Click(object sender, RoutedEventArgs e)
         {
             this.NavigationService.Navigate(new AddEmployee());
@@ -94,40 +114,31 @@ namespace HotelReservation
             this.NavigationService.Navigate(new AddRoom());
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void btn_add_room_type_Click(object sender, RoutedEventArgs e)
         {
-            var first_name = txt_first_name.Text;
-            var last_name = txt_last_name.Text;
-            var mobile_number = txt_mobile_number.Text;
-            var email = txt_email.Text;
-            var Username = txt_Username.Text;
-            var Password = txt_Password.Text;
+            var room_type = txt_room_type.Text;
+            
             if (validate())
             {
-                Employee employee = new Employee(first_name, last_name, mobile_number, email, Username, Password);
-                dt = employee.Save();
-                dg_Employee.ItemsSource = dt.DefaultView;
+                dt = new DataTable();
+                dt = Room.save_room_type(room_type);
+                dg_room_type.ItemsSource = dt.DefaultView;
                 clearFields();
             }
             else
             {
-                MessageBox.Show("All fields are required!");
+                MessageBox.Show("All fields are required for Room Type!");
             }
-
-        }
-        public void clearFields()
-        {
-            txt_first_name.Text = "";
-            txt_last_name.Text = "";
-            txt_mobile_number.Text = "";
-            txt_email.Text = "";
-            txt_Username.Text = "";
-            txt_Password.Text = "";
         }
 
-        public bool validate()
+        private void clearFields()
         {
-            if (txt_first_name.Text == "" || txt_last_name.Text == "" || txt_mobile_number.Text == "" || txt_email.Text == "" || txt_Username.Text == "" || txt_Password.Text == "")
+            txt_room_type.Text = "";
+        }
+
+        private bool validate()
+        {
+            if(txt_room_type.Text == "")
             {
                 return false;
             }
@@ -139,24 +150,36 @@ namespace HotelReservation
 
         private void btn_add_Click(object sender, RoutedEventArgs e)
         {
-            var first_name = txt_first_name.Text;
-            var last_name = txt_last_name.Text;
-            var mobile_number = txt_mobile_number.Text;
-            var email = txt_email.Text;
-            var document_username = txt_Username.Text;
-            var document_password = txt_Password.Text;
-            if (validate())
+            var room_type = cmb_room_type.SelectedItem;
+            var room_number = txt_room_number.Text;
+            var price = txt_price.Text;
+            var extra_person_price = txt_extra_person_price.Text;
+
+            if (validate_room())
             {
-                Employee employee = new Employee(first_name, last_name, mobile_number, email, document_username , document_password);
-                dt = employee.Save();
-                dg_Employee.ItemsSource = dt.DefaultView;
-                clearFields();
+                int room_id = Room.find_room_type_id_by_room_type(room_type.ToString());
+
+                Room r = new Room(room_number, (float)Convert.ToDouble(price), 0, (float)Convert.ToDouble(extra_person_price), room_id);
+                dt = new DataTable();
+                dt = r.save();
+                dg_room.ItemsSource = dt.DefaultView;
             }
             else
             {
                 MessageBox.Show("All fields are required!");
             }
+        }
 
+        private bool validate_room()
+        {
+            if(cmb_room_type.SelectedItem.ToString() == "" || txt_room_number.Text == "" || txt_price.Text == "" || txt_extra_person_price.Text == "")
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
         }
     }
 }

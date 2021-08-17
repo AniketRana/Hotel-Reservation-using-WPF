@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-E:\GroupProj\HotelReservation\hotel_reservation\HotelReservation\obj\Debug\
+E:\CS\repos\hotel_reservation\HotelReservation\obj\Debug\
 HotelReservation
 none
 false
 DEBUG;TRACE
-E:\GroupProj\HotelReservation\hotel_reservation\HotelReservation\App.xaml
-91206901318
+E:\CS\repos\hotel_reservation\HotelReservation\App.xaml
+10102378793
 
-1926324259
+20-1751710720
 18-766630743
-AddEmployee.xaml;AddCustomer.xaml;AddReservation.xaml;CustomersPage.xaml;EmployeesPage.xaml;LoginPage.xaml;MainWindow.xaml;ReservationPage.xaml;RoomPage.xaml;
+AddEmployee.xaml;AddCustomer.xaml;AddReservation.xaml;AddRoom.xaml;CustomersPage.xaml;EmployeesPage.xaml;LoginPage.xaml;MainWindow.xaml;ReservationPage.xaml;RoomPage.xaml;
 
 True
 

@@ -80,7 +80,7 @@ namespace HotelReservation.Models
             total_price = (float)(number_of_days * room.Price);
 
             room.IsOccupied = 1;
-            room.save(true);
+            room.update();
 
             sql = "INSERT INTO Reservation(CId, RoomId, CheckInDate, CheckOutDate, TotalPrice) values (" + customer_id + "," + room.RoomId + ",convert(datetime2,'" + check_in_date + "',103),convert(datetime2,'" + check_out_date + "',103), " + total_price + ") select scope_identity() as RId";
             
