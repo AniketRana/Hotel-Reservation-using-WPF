@@ -17,6 +17,7 @@ using System.Data.SqlClient;
 using System.Configuration;
 using System.Collections.Specialized;
 using HotelReservation.Models;
+using System.Text.RegularExpressions;
 
 namespace HotelReservation
 {
@@ -96,24 +97,48 @@ namespace HotelReservation
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            var first_name = txt_first_name.Text;
-            var last_name = txt_last_name.Text;
-            var mobile_number = txt_mobile_number.Text;
-            var email = txt_email.Text;
-            var Username = txt_Username.Text;
-            var Password = txt_Password.Text;
-            if (validate())
+
+            string pattern = "^([0-9a-zA-Z]([-\\.\\w]*[0-9a-zA-Z])*@([0-9a-zA-Z][-\\w]*[0-9a-zA-Z]\\.)+[a-zA-Z]{2,9})$";
+
+            if (!System.Text.RegularExpressions.Regex.IsMatch(txt_first_name.Text, "^[a-zA-Z ]"))
             {
-                Employee employee = new Employee(first_name, last_name, mobile_number, email, Username, Password);
-                dt = employee.Save();
-                dg_Employee.ItemsSource = dt.DefaultView;
-                clearFields();
+                MessageBox.Show("Allow only alphabetical characters");
+                txt_first_name.Text.Remove(txt_first_name.Text.Length - 1);
+            }
+            else if (!System.Text.RegularExpressions.Regex.IsMatch(txt_last_name.Text, "^[a-zA-Z ]"))
+            {
+                MessageBox.Show("Allow only alphabetical characters");
+                txt_last_name.Text.Remove(txt_last_name.Text.Length - 1);
+            }
+            else if (!System.Text.RegularExpressions.Regex.IsMatch(txt_mobile_number.Text, "^[0-9 ]"))
+            {
+                MessageBox.Show("Allow only Numeric values");
+                txt_mobile_number.Text.Remove(txt_mobile_number.Text.Length - 1);
+            }
+            else if (!Regex.IsMatch(txt_email.Text, pattern))
+            {
+                MessageBox.Show("Invalid email format...");
             }
             else
             {
-                MessageBox.Show("All fields are required!");
+                var first_name = txt_first_name.Text;
+                var last_name = txt_last_name.Text;
+                var mobile_number = txt_mobile_number.Text;
+                var email = txt_email.Text;
+                var Username = txt_Username.Text;
+                var Password = txt_Password.Text;
+                if (validate())
+                {
+                    Employee employee = new Employee(first_name, last_name, mobile_number, email, Username, Password);
+                    dt = employee.Save();
+                    dg_Employee.ItemsSource = dt.DefaultView;
+                    clearFields();
+                }
+                else
+                {
+                    MessageBox.Show("All fields are required!");
+                }
             }
-
         }
         public void clearFields()
         {
@@ -136,9 +161,9 @@ namespace HotelReservation
                 return true;
             }
         }
-
         private void btn_add_Click(object sender, RoutedEventArgs e)
         {
+
             var first_name = txt_first_name.Text;
             var last_name = txt_last_name.Text;
             var mobile_number = txt_mobile_number.Text;
@@ -147,7 +172,7 @@ namespace HotelReservation
             var document_password = txt_Password.Text;
             if (validate())
             {
-                Employee employee = new Employee(first_name, last_name, mobile_number, email, document_username , document_password);
+                Employee employee = new Employee(first_name, last_name, mobile_number, email, document_username, document_password);
                 dt = employee.Save();
                 dg_Employee.ItemsSource = dt.DefaultView;
                 clearFields();
@@ -156,6 +181,7 @@ namespace HotelReservation
             {
                 MessageBox.Show("All fields are required!");
             }
+
 
         }
     }

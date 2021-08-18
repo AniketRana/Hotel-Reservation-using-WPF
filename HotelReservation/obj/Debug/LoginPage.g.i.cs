@@ -42,7 +42,7 @@ namespace HotelReservation {
     public partial class LoginPage : System.Windows.Controls.Page, System.Windows.Markup.IComponentConnector {
         
         
-        #line 30 "..\..\LoginPage.xaml"
+        #line 27 "..\..\LoginPage.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.StackPanel StackPanel1;
         
@@ -50,7 +50,7 @@ namespace HotelReservation {
         #line hidden
         
         
-        #line 33 "..\..\LoginPage.xaml"
+        #line 30 "..\..\LoginPage.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.StackPanel StackPanel2;
         
@@ -58,7 +58,7 @@ namespace HotelReservation {
         #line hidden
         
         
-        #line 36 "..\..\LoginPage.xaml"
+        #line 33 "..\..\LoginPage.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.StackPanel StackPanel3;
         
@@ -66,7 +66,7 @@ namespace HotelReservation {
         #line hidden
         
         
-        #line 39 "..\..\LoginPage.xaml"
+        #line 36 "..\..\LoginPage.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.StackPanel StackPanel4;
         
@@ -74,7 +74,7 @@ namespace HotelReservation {
         #line hidden
         
         
-        #line 43 "..\..\LoginPage.xaml"
+        #line 40 "..\..\LoginPage.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TextBox txt_email;
         
@@ -82,7 +82,7 @@ namespace HotelReservation {
         #line hidden
         
         
-        #line 45 "..\..\LoginPage.xaml"
+        #line 42 "..\..\LoginPage.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.PasswordBox txt_password;
         
@@ -90,7 +90,7 @@ namespace HotelReservation {
         #line hidden
         
         
-        #line 51 "..\..\LoginPage.xaml"
+        #line 48 "..\..\LoginPage.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Button btn_add;
         
@@ -148,7 +148,7 @@ namespace HotelReservation {
             case 7:
             this.btn_add = ((System.Windows.Controls.Button)(target));
             
-            #line 51 "..\..\LoginPage.xaml"
+            #line 48 "..\..\LoginPage.xaml"
             this.btn_add.Click += new System.Windows.RoutedEventHandler(this.Button_Click);
             
             #line default

@@ -39,27 +39,39 @@ namespace HotelReservation
         {
             try
             {
-                if (con.State == ConnectionState.Open)
+                if (txt_email.Text == "")
                 {
-                    con.Close();
+                    MessageBox.Show("Username cannot be empty...");
                 }
-                con.Open();
-                sql = "Select * from Employee where Username = '" + txt_email.Text + "' and password = '" + txt_password.Password + "'";
-                adp = new SqlDataAdapter(sql, con);
-                adp.Fill(dt);
-                if (dt.Rows.Count == 0)
+                else if(txt_password.Password == "")
                 {
-                    MessageBox.Show("Invalid Username or Password...Try again");
+                    MessageBox.Show("Password cannot be empty...");
                 }
                 else
                 {
-                    //redirect to home page
-                    //MessageBox.Show("Login Done");
-                    //Reservations reserv = new Reservations();
-                    //reserv.Show();
-                    this.NavigationService.Navigate(new AddReservation());
+                    if (con.State == ConnectionState.Open)
+                    {
+                        con.Close();
+                    }
+                    con.Open();
+                    sql = "Select * from Employee where Username = '" + txt_email.Text + "' and password = '" + txt_password.Password + "'";
+                    adp = new SqlDataAdapter(sql, con);
+                    adp.Fill(dt);
+                    if (dt.Rows.Count == 0)
+                    {
+                        MessageBox.Show("Invalid Username or Password...Try again");
+                    }
+                    else
+                    {
+                        //redirect to home page
+                        //MessageBox.Show("Login Done");
+                        //Reservations reserv = new Reservations();
+                        //reserv.Show();
+                        this.NavigationService.Navigate(new AddReservation());
+                    }
+                    con.Close();
+
                 }
-                con.Close();
 
             }
             catch (Exception ex)

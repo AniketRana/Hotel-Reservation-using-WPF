@@ -124,6 +124,7 @@ namespace HotelReservation
                 dt = Room.save_room_type(room_type);
                 dg_room_type.ItemsSource = dt.DefaultView;
                 clearFields();
+                FillData();
             }
             else
             {
