@@ -105,3 +105,4 @@ E:\GroupProj\HotelReservation\hotel_reservation\HotelReservation\obj\Debug\Hotel
 E:\GroupProj\HotelReservation\hotel_reservation\HotelReservation\obj\Debug\HotelReservation.csproj.CoreCompileInputs.cache
 E:\GroupProj\HotelReservation\hotel_reservation\HotelReservation\obj\Debug\HotelReservation.exe
 E:\GroupProj\HotelReservation\hotel_reservation\HotelReservation\obj\Debug\HotelReservation.pdb
+E:\GroupProj\HotelReservation\hotel_reservation\HotelReservation\obj\Debug\HotelReservation.csprojAssemblyReference.cache

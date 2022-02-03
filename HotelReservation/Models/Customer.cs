@@ -19,7 +19,8 @@ namespace HotelReservation.Models
         private string document_number;
 
 
-        public Customer(string first_name, string last_name, string mobile_number, string email, string city, string document_name, string document_number, int customer_id=0) : base(first_name, last_name, mobile_number, email)
+        public Customer(string first_name, string last_name, string mobile_number, string email, string city, string document_name, string document_number, int customer_id=0) : 
+            base(first_name, last_name, mobile_number, email)
         {
             this.city = city;
             this.document_name = document_name;

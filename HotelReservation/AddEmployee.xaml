@@ -79,7 +79,6 @@
             </Grid>
         </StackPanel>
 
-
         <StackPanel Grid.Column="4" Grid.Row="1" HorizontalAlignment="Center" Name="StackPanel4" VerticalAlignment="Top"  Margin="10,10,10,0">
             <Grid Background="#FFB4E4CA">
                 <Button x:Name="btn_employees" Click="btn_employees_Click" Background="#FF93C0C7" Foreground="Black" Height="60" BorderThickness="0" HorizontalAlignment="Stretch">

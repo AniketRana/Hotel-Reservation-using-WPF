@@ -16,7 +16,8 @@ namespace HotelReservation.Models
         private string document_Username;
         private string document_Password;
 
-        public Employee(string first_name, string last_name, string mobile_number, string email,string document_Username,  string document_Password, int EId = 0) : base(first_name, last_name, mobile_number, email)
+        public Employee(string first_name, string last_name, string mobile_number, string email,string document_Username,  string document_Password, int EId = 0) : 
+        base(first_name, last_name, mobile_number, email)
         { 
             this.EId = EId;
             this.document_Username = document_Username;

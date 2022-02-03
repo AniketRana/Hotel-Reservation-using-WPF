@@ -40,7 +40,6 @@ namespace HotelReservation
 
         public void FillData()
         {
-
             try
             {
                 if (con.State == ConnectionState.Open)
